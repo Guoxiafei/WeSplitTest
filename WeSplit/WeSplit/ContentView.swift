@@ -11,16 +11,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var count = 1
     var body: some View {
-        NavigationView{
-            Form{
-                Section{
-                    Text("Hello, world!")
-                    Text("Hello, world!")
-                }
-            }
-            .navigationTitle("SwiftUI")
+//        NavigationView{
+//            Form{
+//                Section{
+//                    Text("Hello, world!")
+//                    Text("Hello, world!")
+//                }
+//            }
+//            .navigationBarTitle("SwiftUI",displayMode: .inline)
+//        }
+        Button("Tap Count : \(count)") {
+            self.count += 1
         }
+
+
+
     }
 }
 
