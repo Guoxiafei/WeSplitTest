@@ -11,15 +11,17 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @State private var count = 1
-    @State private var name = ""
+    let students = ["Tim","Alice","Jack"]
+    @State private var selectedStudent = 0
     var body: some View {
         NavigationView{
-            Form{
-                Section{
-                    TextField("Enter Your Name", text: $name)
-                    Text("Your name is \(name)")
+            VStack{
+                Picker("Select Student You Like", selection: $selectedStudent) {
+                    ForEach(0..<students.count) {
+                        Text(self.students[$0])
+                    }
                 }
+                Text("Your choose: Student # \(students[selectedStudent])")
             }
             .navigationBarTitle("SwiftUI",displayMode: .inline)
         }
